@@ -1,0 +1,125 @@
+//Задание 1
+
+phrase_1 = 'Насколько проще было бы писать программы, если бы не заказчики'
+phrase_2 = '640Кб должно хватить для любых задач. Билл Гейтс (по легенде)'
+n = len(phrase_1) - len(phrase_2)
+print (n)
+if n > 0: print ("Фраза 1 длиннее фразы 2")
+if n < 0: print ("Фраза 2 длиннее фразы 1")
+if n == 0: print ("Фразы равны")
+
+//Задание 2
+
+year = 2020
+if year % 4 != 0: print("Обычный год")
+elif year % 100 == 0: 
+    if year % 400 == 0: print("Високоснй год")
+    else: print("Обычный год")
+else: print("Високосный год")
+
+//Задание 3
+print("Введите день:")
+day = input()
+print("Введите месяц:")
+month = input()
+
+if month == "Январь": month = 1
+elif month == "Февраль": month = 2
+elif month == "Март": month = 3
+elif month == "Апрель": month = 4
+elif month == "Май": month = 5
+elif month == "Июнь": month = 6
+elif month == "Июль": month = 7
+elif month == "Август": month = 8
+elif month == "Сентябрь": month = 9
+elif month == "Октябрь": month = 10
+elif month == "Ноябрь": month = 11
+elif month == "Декабрь": month = 12
+else: month = 0
+    
+month = month * 100
+
+date = month + int(day)
+
+zodiak = ""
+
+if date <= 120: zodiak = "Козерог"
+elif date <= 218: zodiak = "Водолей"
+elif date <= 320: zodiak = "Рыбы"
+elif date <= 420: zodiak = "Овен"
+elif date <= 521: zodiak = "Телец"
+elif date <= 621: zodiak = "Близнецы"
+elif date <= 722: zodiak = "Рак"
+elif date <= 823: zodiak = "Лев"
+elif date <= 923: zodiak = "Дева"
+elif date <= 1023: zodiak = "Весы"
+elif date <= 1122: zodiak = "Скорпион"
+elif date <= 1221: zodiak = "Стрелец"
+else: zodiak = "Козерог"
+
+print("Ваш знак зодиака: " + zodiak)
+
+// Задание 4
+width = 10
+length = 205
+height = 5
+
+if width < 15 and length < 15 and height < 15: print("Коробка №1")
+elif width > 15 and width < 50 or length > 15 and length < 50 or height > 15 and height < 50: print("Коробка №2")
+elif length > 200: print("Упаковка для лыж")
+else: print("Стандартная коробка №3")
+
+// Задание 5
+number = 123321
+
+numberStr = str(number)
+
+sumFirst = 0
+sumSecond = 0
+
+for i in range(6):
+    if i < 3:
+        sumFirst += int( numberStr[i] )
+    else:
+        sumSecond += int( numberStr[i] )
+        
+if sumFirst == sumSecond: print("Счастливый билет")
+else: print("Несчастливый билет")
+
+// Задание 6
+import math
+
+def circle():
+    print("Введите радиус круга:")
+    r = int( input() )
+    square = math.pi * r * r
+    print( "Площадь круга: " + str(square) )
+    
+def triangle():
+    print("Введите длину стороны A:")
+    a = int( input() )
+    print("Введите длину стороны B:")
+    b = int( input() )
+    print("Введите длину стороны C:")
+    c = int( input() )
+    halfPerimetr = (a + b + c) / 2;
+    square = math.sqrt( halfPerimetr * (halfPerimetr - a) * (halfPerimetr - b) * (halfPerimetr - c) )
+    print( "Площадь треугольника: " + str(square) )
+    
+def rectangle():
+    print("Введите длину стороны A:")
+    a = int( input() )
+    print("Введите длину стороны B:")
+    b = int( input() )
+    square = a * b
+    print( "Площадь прямоугольника: " + str(square) )
+
+print("Введите тип фигуры:")
+type = input()
+
+if type == "Круг":
+    circle()
+elif type == "Треугольник":
+    triangle()
+elif type == "Прямоугольник":
+    rectangle()

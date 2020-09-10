@@ -1,0 +1,135 @@
+ // Ввведение в типы данных
+
+// Задание 1
+word = 'test'
+
+length = len(word)
+
+middle = int(length / 2)
+
+if length % 2 == 0:
+    print(word[middle - 1] + word[middle])
+else:
+    print(word[middle])
+    
+// Задание 2
+print("Введите число:")
+number = input()
+sum = 0
+
+while int(number) != 0:
+    sum += int(number)
+    print("Введите число:")
+    number = input()
+    
+print(sum)
+
+// Задание 3
+boys = ['Peter', 'Alex', 'John', 'Arthur', 'Richard']
+girls = ['Kate', 'Liza', 'Kira', 'Emma', 'Trisha']
+
+if len(boys) != len(girls): print("Внимание, кто-то может остаться без пары!")
+else:
+    boys = sorted(boys)
+    girls = sorted(girls)
+    
+    for i in range( len(boys) ):
+        print(boys[i] + " и " + girls[i])
+
+// Задание 4
+countries_temperature = [
+    ['Thailand', [75.2, 77, 78.8, 73.4, 68, 75.2, 77]],
+    ['Germany', [57.2, 55.4, 59, 59, 53.6]],
+    ['Russia', [35.6, 37.4, 39.2, 41, 42.8, 39.2, 35.6]],
+    ['Poland', [50, 50, 53.6, 57.2, 55.4, 55.4]]
+]
+
+def countAverage(arr):
+    sum = 0
+    
+    for item in arr:
+        sum += item
+        
+    average = (sum / len(arr) - 32) * 5 / 9
+    
+    return str( round(average, 2) ) + " C"
+
+for i in range( len(countries_temperature) ):
+    print( countries_temperature[i][0] + " - " + countAverage( countries_temperature[i][1] ) )
+
+// Задание 5
+stream = [
+    '2018-01-01,user1,3',
+    '2018-01-07,user1,4',
+    '2018-03-29,user1,1',
+    '2018-04-04,user1,13',
+    '2018-01-05,user2,7',
+    '2018-06-14,user3,4',
+    '2018-07-02,user3,10',
+    '2018-03-21,user4,19',
+    '2018-03-22,user4,4',
+    '2018-04-22,user4,8',
+    '2018-05-03,user4,9',
+    '2018-05-11,user4,11',
+]
+
+users = {}
+visits = 0
+
+for log in stream:
+    logArr = log.split(",")
+    
+    users[ logArr[1] ] = 1
+    
+    visits += int( logArr[2] )
+    
+average = round(visits / len(users), 2)
+
+print( "Среднее количество просмотров на уникального пользователя: " + str(average) )
+
+print("Введите числа:")
+inp = input()
+
+numbers = inp.split(" ")
+    
+result = []
+    
+for i in range(len(numbers) - 1):
+    has = 0
+    for j in range( i + 1, len(numbers) ):
+        if numbers[i] == numbers[j]: has = 1
+    if has == 1: result.append( numbers[i] )
+        
+response = ""
+        
+result = sorted(result)
+        
+for i in range( len(result) ):
+    response += str( result[i] )
+    if i != len(result) - 1: response += " "
+    
+print(response)
+
+// Задание 6
+print("Введите числа:")
+inp = input()
+
+numbers = inp.split(" ")
+    
+result = []
+    
+for i in range(len(numbers) - 1):
+    has = 0
+    for j in range( i + 1, len(numbers) ):
+        if numbers[i] == numbers[j]: has = 1
+    if has == 1: result.append( numbers[i] )
+        
+response = ""
+        
+result = sorted(result)
+        
+for i in range( len(result) ):
+    response += str( result[i] )
+    if i != len(result) - 1: response += " "
+    
+print(response)
